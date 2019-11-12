@@ -48,11 +48,15 @@ public class Suma extends AppCompatActivity implements View.OnClickListener{
         Button btPlusCand2 = findViewById(R.id.btPlusCand2);
         Button btReset = findViewById(R.id.btReset);
         Button btEnd = findViewById(R.id.btGetResults);
+        Button btMinusCand1 = findViewById(R.id.btMinusCand1);
+        Button btMinusCand2 = findViewById(R.id.btMinusCand2);
 
         btPlusCand1.setOnClickListener(this);
         btPlusCand2.setOnClickListener(this);
         btReset.setOnClickListener(this);
         btEnd.setOnClickListener(this);
+        btMinusCand1.setOnClickListener(this);
+        btMinusCand2.setOnClickListener(this);
     }
 
     @Override
@@ -79,6 +83,14 @@ public class Suma extends AppCompatActivity implements View.OnClickListener{
                 intent.putExtra("cand1", cand1);
                 intent.putExtra("cand2", cand2);
                 startActivity(intent);
+                break;
+            case R.id.btMinusCand1:
+                cand1.setVotes(cand1.getVotes() -1);
+                tvVotes1.setText(String.valueOf(cand1.getVotes()));
+                break;
+            case R.id.btMinusCand2:
+                cand2.setVotes(cand2.getVotes() -1);
+                tvVotes2.setText(String.valueOf(cand2.getVotes()));
                 break;
             default:
                 break;
